@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To My wife saara</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .type-text {
+      font-size: 24px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 12px;
+      transition: opacity 2s ease-in-out;
+    }
+    #video-container {
+      display: none;
+      margin-top: 20px;
+    }
+    video {
+      max-width: 90%;
+      border: 3px solid white;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff69b4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support background music.
+  </audio>
+
+  <!-- Typing Message -->
+  <div class="type-text" id="typing"></div>
+
+  <!-- Video Container -->
+  <div id="video-container">
+    <video controls autoplay muted playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let i = 0;
+    const text = `Hi saara, I made this website just for you ❤️
+ Happy birthday my queen Unna pola oru azhagana life partner kidaikkardhu luck tha
+  yenaku nee kedaichathu yenaku romba happie ah iruku papa✨
+Happy Birthday to the one who makes my world complete 🌍❤️ 
+You complete me in ways words can’t explain 😘 My love my life, my everything
+ Na yela situation laiyum na unkuda irupen papa🫶🏻unaku support ah 🫂
+una Nala pathupen ah theriyala but yenala mudincha alavuku una na pathupen papa💕 
+i love u di saara😘 aporom oru chinna memories clip namba love pani 10 months aguthu 
+Inu 2months la namaku love aniversary💝 advance love aniversary ammu💖.
+ Aporom antha clip yetho try panne Nala irukuthanu theriyala adjust panikoo😅
+ enjoy your day papa.
+By-Forever yours, with every heartbeat🥰`;
+    let speed = 100;
+
+    function typeWriter( ) {
+      const typingDiv = 
+    document.getElementById("typing");
+      if (!typingDiv) return;
+
+      if (i < text.length) {
+        typingDiv.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        setTimeout(() => {
+          typingDiv.style.opacity = 0;
+
+          setTimeout(() => {
+            document.getElementById("video-container").style.display = "block";
+          }, 2000);
+        }, 1000);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
